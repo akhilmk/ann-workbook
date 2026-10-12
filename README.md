@@ -54,3 +54,19 @@ ann-workbook/
 > All notebooks share the single root environment. If a future notebook ever needs
 > conflicting dependencies, that topic can be split into its own uv project (or a
 > uv workspace) without affecting the others.
+
+## Link checks
+
+Every "Open in Colab" badge must point to a notebook that actually exists.
+Validate all of them with:
+
+```bash
+scripts/check_colab_links.sh
+```
+
+It reports any badge whose path is missing (and warns if a URL points at a
+different repo than `origin`). To run it automatically before every push:
+
+```bash
+ln -sf ../../scripts/check_colab_links.sh .git/hooks/pre-push
+```
