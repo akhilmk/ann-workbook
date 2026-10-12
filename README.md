@@ -10,7 +10,7 @@ folder and is self-contained, so you can run any notebook:
 
 | Notebook | Dataset | Task | Framework | Colab |
 |---|---|---|---|---|
-| [Fashion-MNIST CNN](fashion-mnist/cnn-pt.ipynb) | [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) — 60,000 train / 10,000 test, 28×28 grayscale, 10 classes | Image classification (CNN) | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/ann-workbook/blob/main/fashion-mnist/cnn-pt.ipynb) |
+| [Fashion-MNIST CNN](fashion-mnist/fashion_mnist_cnn.ipynb) | [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) — 60,000 train / 10,000 test, 28×28 grayscale, 10 classes | Image classification (CNN) | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/ann-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb) |
 
 > More notebooks (MNIST, CIFAR-10, …) will be added here as new folders with a row in this table.
 
@@ -35,7 +35,7 @@ end-to-end. No local setup required.
 ```
 ann-workbook/
 ├── fashion-mnist/            # one folder per topic
-│   ├── cnn-pt.ipynb          # the notebook
+│   ├── fashion_mnist_cnn.ipynb          # the notebook
 │   └── README.md             # notes about this notebook + its dataset
 ├── pyproject.toml            # shared uv environment used by all notebooks
 ├── uv.lock
