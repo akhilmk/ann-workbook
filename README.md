@@ -1,6 +1,6 @@
 # ann-workbook
 
-A collection of **CNN learning notebooks** in PyTorch. Each topic lives in its own
+A collection of **Artificial Neural Network learning notebooks** in PyTorch. Each topic lives in its own
 folder and is self-contained, so you can run any notebook:
 
 - **Locally** with [uv](https://docs.astral.sh/uv/) — one shared environment, no setup scripts.
