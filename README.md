@@ -1,4 +1,4 @@
-# ann-workbook
+# Artificial-Neural-Network-workbook
 
 A collection of **Artificial Neural Network learning notebooks** in PyTorch. Each topic lives in its own
 folder and is self-contained, so you can run any notebook:
@@ -8,11 +8,14 @@ folder and is self-contained, so you can run any notebook:
 
 ## Notebooks
 
-| Notebook | Dataset | Task | Framework | Colab |
-|---|---|---|---|---|
-| [Fashion-MNIST CNN](fashion-mnist/fashion_mnist_cnn.ipynb) | [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) — 60,000 train / 10,000 test, 28×28 grayscale, 10 classes | Image classification (CNN) | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/ann-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb) |
+| Folder | Notebook | Dataset | Task | Framework | Colab |
+|---|---|---|---|---|---|
+| `neural-network` | [PyTorch Fundamentals](neural-network/01_pytorch_fundamentals.ipynb) | — (synthetic tensors) | Tensor basics: creating, reshaping, indexing, math, one-hot encoding | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/neural-network/01_pytorch_fundamentals.ipynb) |
+| `neural-network` | [Regression](neural-network/02_%20regression.ipynb) | Synthetic `y = x + 10` line + [Medical Insurance](https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv) | Regression: predict a continuous number | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/neural-network/02_%20regression.ipynb) |
+| `fashion-mnist` | [Fashion-MNIST CNN](fashion-mnist/fashion_mnist_cnn.ipynb) | [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) — 60,000 train / 10,000 test, 28×28 grayscale, 10 classes | Image classification (CNN) | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb) |
 
-> More notebooks (MNIST, CIFAR-10, …) will be added here as new folders with a row in this table.
+> New topics get their own folder and a row in this table. If a folder grows to
+> several notebooks, split its rows into a dedicated subsection under **Notebooks**.
 
 ## Run locally
 
@@ -33,14 +36,20 @@ end-to-end. No local setup required.
 ## Repository layout
 
 ```
-ann-workbook/
-├── fashion-mnist/            # one folder per topic
-│   ├── fashion_mnist_cnn.ipynb          # the notebook
-│   └── README.md             # notes about this notebook + its dataset
-├── pyproject.toml            # shared uv environment used by all notebooks
+neural-network-workbook/
+├── neural-network/                   # PyTorch fundamentals → regression
+│   ├── 01_pytorch_fundamentals.ipynb
+│   ├── 02_ regression.ipynb
+│   └── saved_models/                 # trained weights (git-ignored)
+├── fashion-mnist/                    # CNN image classification
+│   ├── fashion_mnist_cnn.ipynb
+│   └── README.md                     # notes about this notebook + its dataset
+├── scripts/
+│   └── check_colab_links.sh          # validates the Colab badges
+├── pyproject.toml                    # shared uv environment used by all notebooks
 ├── uv.lock
 ├── .python-version
-├── data/                     # downloaded datasets (git-ignored)
+├── data/                             # downloaded datasets (git-ignored)
 └── README.md
 ```
 
@@ -48,7 +57,7 @@ ann-workbook/
 
 1. Create a topic folder, e.g. `mnist/`, with your `.ipynb` and a small `README.md`.
 2. Add a row to the **Notebooks** table above with its Colab link:
-   `https://colab.research.google.com/github/akhilmk/ann-workbook/blob/main/<folder>/<notebook>.ipynb`
+   `https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/<folder>/<notebook>.ipynb`
 3. If it needs extra packages, add them to the root `pyproject.toml` and run `uv sync`.
 
 > All notebooks share the single root environment. If a future notebook ever needs

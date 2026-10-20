@@ -54,6 +54,7 @@ while IFS= read -r file; do
         # Strip everything up to and including "/blob/<ref>/"
         rest="${url#*/blob/}"     # <ref>/<path>
         path="${rest#*/}"         # <path>
+        path="${path//%20/ }"     # decode spaces (%20) in notebook filenames
 
         if [[ -f "$path" ]]; then
             report_ok "$path"

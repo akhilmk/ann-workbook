@@ -1,6 +1,6 @@
 # Fashion-MNIST CNN (PyTorch)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/ann-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb)
 
 A step-by-step walkthrough of **image preprocessing** and training a
 **Convolutional Neural Network** on Fashion-MNIST, using PyTorch.
