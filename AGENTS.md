@@ -18,14 +18,49 @@ index. **The notebooks are the deliverable** — this is not a Python package.
 - Add new dependencies to the root `pyproject.toml`, then run `uv sync` so
   `uv.lock` stays current.
 
+## Local + Colab parity
+
+Every notebook must run end-to-end in **both** places:
+
+- Locally with `uv run jupyter lab`; dependencies come from `uv sync`.
+- In Colab via the README badge. Colab ships torch, torchvision, numpy, pandas,
+  matplotlib, seaborn, and scikit-learn, but not smaller extras such as
+  `torchinfo`.
+
+Rules:
+
+- The top import cell must install anything Colab lacks. Guard the install so it
+  is a no-op locally and only runs when the package is actually missing:
+
+  ```python
+  import sys
+
+  if "google.colab" in sys.modules:
+      try:
+          import torchinfo  # noqa: F401
+      except ModuleNotFoundError:
+          import subprocess
+          subprocess.run(
+              [sys.executable, "-m", "pip", "-q", "install", "torchinfo"],
+              check=True,
+          )
+  ```
+
+- The Fashion-MNIST and Regression notebooks are the reference examples.
+- Do not use bare `!pip install` lines, because they also run in local
+  environments.
+- When adding a dependency to `pyproject.toml`, check whether Colab already ships
+  it; if not, add it to the notebook's bootstrap cell too.
+- Avoid assumptions about the working directory in code that must work in both
+  places; resolve paths from the notebook or repository root when needed.
+
 ## Notebook rules
 
 - Preserve the existing cell order, markdown explanations, and teaching style.
 - Do not convert notebook cells into `.py` files or reformat notebooks wholesale.
 - Do not clear the committed outputs of `fashion-mnist/fashion_mnist_cnn.ipynb`.
-- Keep notebooks runnable top-to-bottom, both locally and in Colab. If a notebook
-  needs a package Colab may lack (e.g. `torchinfo`), include the Colab bootstrap
-  pattern used in the Fashion-MNIST notebook.
+- Keep notebooks runnable top-to-bottom in both environments — see
+  [Local + Colab parity](#local--colab-parity).
 - Name new notebooks `NN_topic.ipynb` without spaces. `02_ regression.ipynb` is a
   known exception — do not rename it unless asked.
 - Run notebooks or training only when the task requires it; full training is slow.
