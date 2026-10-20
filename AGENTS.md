@@ -3,6 +3,24 @@
 Instructions for AI coding agents working in this repository. The human-facing
 overview is in [README.md](README.md).
 
+## Git: hands off
+
+Never run git commands. The user reviews diffs, stages, commits, and pushes
+manually.
+
+- Do not run `git add`, `git commit`, `git push`, `git diff`, `git status`,
+  `git log`, `git checkout`, `git switch`, `git reset`, `git restore`,
+  `git stash`, `git branch`, `git tag`, `git merge`, `git rebase`, or
+  `git pull`.
+- Do not create, amend, or rewrite commits, and do not change branches or
+  remotes.
+- Do not use `git` to inspect the working tree or history; read files directly
+  with normal file tools.
+- When a change is ready, stop and report the modified files. Mention that a
+  commit may be needed, but leave all git work to the user.
+- Even if a request appears to ask for a git operation, do not run it. Remind the
+  user of this rule and let them perform it themselves.
+
 ## What this repo is
 
 A collection of self-contained PyTorch learning notebooks. Each topic lives in its
@@ -95,4 +113,5 @@ Never commit:
 
 Make the smallest change that solves the task. Do not reorganize folders, rename
 topics, or add linting/CI/tooling unless requested. Ask before deleting or
-rewriting user-authored notebook content, and do not commit or push unless asked.
+rewriting user-authored notebook content. Leave every git operation to the user
+— see [Git: hands off](#git-hands-off).
