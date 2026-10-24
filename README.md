@@ -14,6 +14,7 @@ folder and is self-contained, so you can run any notebook:
 | `neural-network` | [Regression](neural-network/02_%20regression.ipynb) | Synthetic `y = x + 10` line + [Medical Insurance](https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv) | Regression: predict a continuous number | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/neural-network/02_%20regression.ipynb) |
 | `neural-network` | [Classification](neural-network/03_classification.ipynb) | Synthetic circles (`make_circles`) + [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) | Classification: binary + multiclass | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/neural-network/03_classification.ipynb) |
 | `neural-network` | [Convolutional Neural Networks](neural-network/04_convolutional_neural_networks.ipynb) | Pizza/Steak + 10 food classes ([Food-101](https://data.vision.ee.ethz.ch/cvl/datasets_extra/food-101/) subsets) | Image classification (CNN): binary + multiclass, augmentation, predictions | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/neural-network/04_convolutional_neural_networks.ipynb) |
+| `cat-vs-dog` | [Cat vs Dog](cat-vs-dog/01_cat_vs_dog.ipynb) | Cats & Dogs — 2,000 train / 400 test, 100×100 RGB (local CSVs, Kaggle, or public fallback) | Image classification (CNN): binary, CSV → tensors, training and evaluation | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/cat-vs-dog/01_cat_vs_dog.ipynb) |
 | `fashion-mnist` | [Fashion-MNIST CNN](fashion-mnist/fashion_mnist_cnn.ipynb) | [Fashion-MNIST](https://github.com/zalandoresearch/fashion-mnist) — 60,000 train / 10,000 test, 28×28 grayscale, 10 classes | Image classification (CNN) | PyTorch | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/akhilmk/neural-network-workbook/blob/main/fashion-mnist/fashion_mnist_cnn.ipynb) |
 
 > New topics get their own folder and a row in this table. If a folder grows to
@@ -52,6 +53,9 @@ neural-network-workbook/
 │   ├── 03_classification.ipynb
 │   ├── 04_convolutional_neural_networks.ipynb
 │   └── saved_models/                 # trained weights (git-ignored)
+├── cat-vs-dog/                       # binary CNN: cat vs dog
+│   ├── 01_cat_vs_dog.ipynb
+│   └── README.md                     # data sources, Colab setup, high-level notes
 ├── fashion-mnist/                    # CNN image classification
 │   ├── fashion_mnist_cnn.ipynb
 │   └── README.md                     # notes about this notebook + its dataset

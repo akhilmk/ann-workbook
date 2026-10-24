@@ -9,4 +9,5 @@ __pycache__/
 # Datasets (downloaded on demand) and trained artifacts
 data/
 **/data/
+*.npz
 *.pth
