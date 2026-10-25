@@ -55,3 +55,11 @@ and the notebook downloads its dataset automatically.
 - Weights are saved as `../fashion_cnn.pth`.
 - `seaborn`'s `countplot` miscounts categoricals under pandas 3.0, so the
   distribution plots aggregate with `value_counts()` and render with `barplot`.
+
+## References
+
+- [How to preprocess and train a CNN step by step](https://www.kaggle.com/code/vesuvius13/how-to-preprocess-and-train-a-cnn-step-by-step)
+  — the original TensorFlow/Keras notebook this PyTorch walkthrough is ported
+  from.
+- [Fashion-MNIST dataset](https://github.com/zalandoresearch/fashion-mnist) —
+  Zalando Research.
